@@ -1,0 +1,31 @@
+services:
+  control_node:
+    build:
+      dockerfile: control_node/Dockerfile
+    container_name: control_node
+    tty: true
+    ports:
+      - "2222:22"
+  host1:
+    build:
+      dockerfile: regular_hosts/Dockerfile
+    container_name: host1c
+    tty: true
+    ports:
+      - "2223:22"
+
+  host2:
+    build:
+      dockerfile: regular_hosts/Dockerfile
+    container_name: host2c
+    tty: true
+    ports:
+      - "2224:22"
+
+  host3:
+    build:
+      dockerfile: regular_hosts/Dockerfile
+    container_name: host3c
+    tty: true
+    ports:
+      - "2225:22"
