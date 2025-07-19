@@ -24,6 +24,7 @@ COPY .ssh/docker_key /root/.ssh
 COPY .ssh/docker_key.pub /root/.ssh
 COPY .ssh/config /root/.ssh
 COPY control_node/inventory.ini /root/ansible/inventory.ini
+COPY control_node/inventory.yaml /root/ansible/inventory.yaml
 RUN chmod 600 /root/.ssh/docker_key
 RUN chmod 644 /root/.ssh/docker_key.pub
 

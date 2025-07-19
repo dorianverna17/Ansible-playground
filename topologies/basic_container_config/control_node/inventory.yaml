@@ -1,0 +1,8 @@
+myhosts:
+  hosts:
+    host1c:
+      ansible_host: host1c
+    host2c:
+      ansible_host: host2c
+    host3c:
+      ansible_host: host3c

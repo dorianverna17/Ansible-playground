@@ -1,0 +1,85 @@
+services:
+  control_node:
+    build:
+      dockerfile: control_node/Dockerfile
+    container_name: control_node
+    tty: true
+    ports:
+      - "2222:22"
+    networks:
+      custom_network:
+        ipv4_address: 172.20.0.10
+
+  host1:
+    build:
+      dockerfile: regular_hosts/Dockerfile
+    container_name: host1c
+    tty: true
+    ports:
+      - "2223:22"
+    networks:
+      custom_network:
+        ipv4_address: 172.20.0.11
+
+  host2:
+    build:
+      dockerfile: regular_hosts/Dockerfile
+    container_name: host2c
+    tty: true
+    ports:
+      - "2224:22"
+    networks:
+      custom_network:
+        ipv4_address: 172.20.0.12
+
+  host3:
+    build:
+      dockerfile: regular_hosts/Dockerfile
+    container_name: host3c
+    tty: true
+    ports:
+      - "2225:22"
+    networks:
+      custom_network:
+        ipv4_address: 172.20.0.13
+
+  host4:
+    build:
+      dockerfile: regular_hosts/Dockerfile
+    container_name: host4c
+    tty: true
+    ports:
+      - "2226:22"
+    networks:
+      custom_network:
+        ipv4_address: 172.20.0.14
+
+  host5:
+    build:
+      dockerfile: regular_hosts/Dockerfile
+    container_name: host5c
+    tty: true
+    ports:
+      - "2227:22"
+    networks:
+      custom_network:
+        ipv4_address: 172.20.0.15
+
+  host6:
+    build:
+      dockerfile: regular_hosts/Dockerfile
+    container_name: host6c
+    tty: true
+    ports:
+      - "2228:22"
+    networks:
+      custom_network:
+        ipv4_address: 172.20.0.16
+
+networks:
+  custom_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+          gateway: 172.20.0.1

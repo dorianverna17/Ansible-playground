@@ -13,6 +13,7 @@ Useful Ansible commands learned:
 2. Ping hosts in inventory
 
 ```ansible myhosts -m ping -i inventory.ini```
+```ansible myhosts -m ping -i inventory.yaml```
 
 Side workaround:
 
@@ -46,3 +47,9 @@ Also, in order to be able to be able to access the host with SSH, we had to add 
 
 I eventually ended up creating a Docker configuration where the control node exists besides the managed nodes.
 Same key operation has to be done, but in the case of the nodes.
+
+3. ping datacenter inventory
+
+```ansible datacenter -m ping -i inventory.yaml```
+
+Note: This doesn't work entirely as expected - still need to figure out how to connect to the webservers via SSH without providing a password.
