@@ -28,7 +28,6 @@ ssh-keygen -t rsa -b 4096 -f ./.ssh/docker_key
 
 For each container (connect to them - and install SSH + start the service):
 ```
-
 apt update
 apt install openssh-server
 mkdir -p /var/run/sshd
@@ -53,3 +52,8 @@ Same key operation has to be done, but in the case of the nodes.
 ```ansible datacenter -m ping -i inventory.yaml```
 
 Note: This doesn't work entirely as expected - still need to figure out how to connect to the webservers via SSH without providing a password.
+
+4. Running an ansible playbook
+
+I used the basic Docker configuration to test it:
+```ansible-playbook -i inventory.ini playbook.yaml```
